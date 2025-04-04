@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        /* Main container for layout */
+            .container {
+                display: flex;
+            }
+
+            /* Fixed Sidebar (Search Bar + Menu) */
+            .sidebar {
+                width: 250px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                background-color: white;
+                border-right: 1px solid #ddd;
+                overflow-y: auto; 
+            }
+
+            #mySearch {
+                width: calc(100% - 20px); 
+                font-size: 18px;
+                padding: 10px;
+                border: 1px solid #ddd;
+                margin-bottom: 10px; 
+                display: block;
+            }
+
+            /* Menu styles */
+            #myMenu {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Style the menu links */
+            #myMenu li a {
+                padding: 12px;
+                text-decoration: none;
+                color: black;
+                display: block;
+            }
+
+            #myMenu li a:hover {
+                background-color: #eee;
+            }
+
+            /* Image container to the right of the fixed menu */
+            .image-container {
+                margin-left: 270px; /* Push image area to the right */
+                padding: 20px;
+                text-align: center;
+                flex-grow: 1; /* Allows expansion */
+            }
+
+            /* Hide images initially */
+            .image-container img {
+                display: none;
+                max-width: 300px;
+            }
+
+        </style>
+    </head>
+    <body>
+       
+        <div class="image-container">
+            <img id="broccoli" src="broccoli.jpg">
+            <img id="strawberry" src="strawberry.jpg">
+            <img id="apple" src="apple.png">
+            <img id="carrot" src="carrot.jpg">
+            <img id="daikon" src="daikon.jpg">
+            <img id="endive" src="endive.png">
+            <img id="fig" src="fig.jpg">
+            <img id="garlic" src="garlic.png">
+            <img id="ginger" src="ginger.webp">
+            <img id="grapes" src="grapes.png">
+            <img id="lettuce" src="lettuce.webp">
+            <img id="kale" src="kale.jpg">
+            <img id="kiwi" src="kiwi.webp">
+            <img id="leek" src="leek.jpg">
+            <img id="mango" src="mango.jpeg">
+            <img id="nectarine" src="nectarine.jpg">
+            <img id="mushroom" src="mushroom.jpg">
+            <img id="onion" src="onion.webp">
+            <img id="papaya" src="papaya.png">
+            <img id="peach" src="peach.webp">
+            <img id="pear" src="pear.jpg">
+            <img id="peppers" src="peppers.jpg">
+            <img id="pineapple" src="pineapple.png">
+            <img id="potato" src="potatoes.jpg">
+            <img id="radish" src="radish.jpg">
+            <img id="rasp" src="raspberries.jpg">
+            <img id="squash" src="squash.jpg">
+            <img id="sweetpot" src="sweetpotato.webp">
+            <img id="tomato" src="tomato.webp">
+            <img id="turnip" src="turnip.webp">
+            <img id="watermelon" src="watermelon.webp">
+      </div>
+      <div class="container">
+        <!-- Fixed Sidebar (Search + Menu) -->
+        <div class="sidebar">
+            <input type="text" id="mySearch" onkeyup="search()" placeholder="Search..." title="Type in a category">
+            <ul id="myMenu">
+                <li><a href="#" onclick="showImage('apple')">Apple</a></li>
+                <li><a href="#" onclick="showImage('broccoli')">Broccoli</a></li>
+                <li><a href="#" onclick="showImage('carrot')">Carrot</a></li>
+                <li><a href="#" onclick="showImage('daikon')">Daikon</a></li>
+                <li><a href="#" onclick="showImage('endive')">Endive</a></li>
+                <li><a href="#" onclick="showImage('fig')">Fig</a></li>
+                <li><a href="#" onclick="showImage('garlic')">Garlic</a></li>
+                <li><a href="#" onclick="showImage('ginger')">Ginger</a></li>
+                <li><a href="#" onclick="showImage('grapes')">Grape</a></li>
+                <li><a href="#" onclick="showImage('lettuce')">Iceberg Lettuce</a></li>
+                <li><a href="#" onclick="showImage('kale')">Kale</a></li>
+                <li><a href="#" onclick="showImage('kiwi')">Kiwi</a></li>
+                <li><a href="#" onclick="showImage('leek')">Leek</a></li>
+                <li><a href="#" onclick="showImage('mango')">Mango</a></li>
+                <li><a href="#" onclick="showImage('mushroom')">Mushroom</a></li>
+                <li><a href="#" onclick="showImage('nectarine')">Nectarine</a></li>
+                <li><a href="#" onclick="showImage('onion')">Onion</a></li>
+                <li><a href="#" onclick="showImage('papaya')">Papaya</a></li>
+                <li><a href="#" onclick="showImage('peach')">Peach</a></li>
+                <li><a href="#" onclick="showImage('pear')">Pear</a></li>
+                <li><a href="#" onclick="showImage('peppers')">Peppers</a></li>
+                <li><a href="#" onclick="showImage('pineapple')">Pineapple</a></li>
+                <li><a href="#" onclick="showImage('potato')">Potato</a></li>
+                <li><a href="#" onclick="showImage('radish')">Radish</a></li>
+                <li><a href="#" onclick="showImage('rasp')">Raspberry</a></li>
+                <li><a href="#" onclick="showImage('squash')">Squash</a></li>
+                <li><a href="#" onclick="showImage('strawberry')">Strawberries</a></li>
+                <li><a href="#" onclick="showImage('sweetpot')">Sweet potato</a></li>
+                <li><a href="#" onclick="showImage('tomato')">Tomato</a></li>
+                <li><a href="#" onclick="showImage('turnip')">Turnip</a></li>
+                <li><a href="#" onclick="showImage('watermelon')">Watermelon</a></li>
+              </ul>
+              
+    </div>
+    <script>
+        function search() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+                } else {
+                li[i].style.display = "none";
+                }
+            }
+        }
+
+        function showImage(imageId) {
+                    // Hide all images first
+                    document.querySelectorAll('.image-container img').forEach(img => {
+                        img.style.display = 'none';
+                    });
+                    // Show the selected image
+                    document.getElementById(imageId).style.display = 'block';
+                }
+    </script>
+    </body>
+</html>

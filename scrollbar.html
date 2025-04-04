@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <style>
+            .image-container img {
+            display: none; /* Hide all images initially */
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 300px;
+            margin-top: 60px; 
+          }
+
+                  .image-container {
+            margin-top: 60px; /* Pushes content down so it doesn’t hide behind the fixed menu */
+            text-align: center;
+          }
+                  div.scrollmenu {
+            background-color: white;
+            position: fixed; /* Keeps it at the top */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Full width of the viewport */
+            overflow-x: auto; /* Enables horizontal scrolling */
+            white-space: nowrap;
+            z-index: 1000; /* Ensures it stays above other elements */
+            border-bottom: 2px solid #ddd; /* Optional: adds a nice separation */
+            padding: 10px 0;
+          }
+
+          div.scrollmenu a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+          }
+
+          div.scrollmenu a:hover {
+            background-color: #eee;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="image-container">
+            <img id="broccoli" src="broccoli.jpg">
+            <img id="strawberry" src="strawberry.jpg">
+            <img id="apple" src="apple.png">
+            <img id="carrot" src="carrot.jpg">
+            <img id="daikon" src="daikon.jpg">
+            <img id="endive" src="endive.png">
+            <img id="fig" src="fig.jpg">
+            <img id="garlic" src="garlic.png">
+            <img id="ginger" src="ginger.webp">
+            <img id="grapes" src="grapes.png">
+            <img id="lettuce" src="lettuce.webp">
+            <img id="kale" src="kale.jpg">
+            <img id="kiwi" src="kiwi.webp">
+            <img id="leek" src="leek.jpg">
+            <img id="mango" src="mango.jpeg">
+            <img id="nectarine" src="nectarine.jpg">
+            <img id="mushroom" src="mushroom.jpg">
+            <img id="onion" src="onion.webp">
+            <img id="papaya" src="papaya.png">
+            <img id="peach" src="peach.webp">
+            <img id="pear" src="pear.jpg">
+            <img id="peppers" src="peppers.jpg">
+            <img id="pineapple" src="pineapple.png">
+            <img id="potato" src="potatoes.jpg">
+            <img id="radish" src="radish.jpg">
+            <img id="rasp" src="raspberries.jpg">
+            <img id="squash" src="squash.jpg">
+            <img id="sweetpot" src="sweetpotato.webp">
+            <img id="tomato" src="tomato.webp">
+            <img id="turnip" src="turnip.webp">
+            <img id="watermelon" src="watermelon.webp">
+        </div>
+        <div class="scrollmenu">
+            <a href="#" onclick="showImage('apple')">Apple</a>  
+            <a href="#" onclick="showImage('broccoli')">Broccoli</a>  
+            <a href="#" onclick="showImage('carrot')">Carrot</a>  
+            <a href="#" onclick="showImage('daikon')">Daikon</a>  
+            <a href="#" onclick="showImage('endive')">Endive</a>  
+            <a href="#" onclick="showImage('fig')">Fig</a>  
+            <a href="#" onclick="showImage('garlic')">Garlic</a>  
+            <a href="#" onclick="showImage('ginger')">Ginger</a>  
+            <a href="#" onclick="showImage('grapes')">Grape</a>  
+            <a href="#" onclick="showImage('lettuce')">Iceberg Lettuce</a>  
+            <a href="#" onclick="showImage('kale')">Kale</a>  
+            <a href="#" onclick="showImage('kiwi')">Kiwi</a>    
+            <a href="#" onclick="showImage('leek')">Leek</a>  
+            <a href="#" onclick="showImage('mango')">Mango</a>  
+            <a href="#" onclick="showImage('mushroom')">Mushroom</a>    
+            <a href="#" onclick="showImage('nectarine')">Nectarine</a>  
+            <a href="#" onclick="showImage('onion')">Onion</a>  
+            <a href="#" onclick="showImage('papaya')">Papaya</a>  
+            <a href="#" onclick="showImage('peach')">Peach</a>  
+            <a href="#" onclick="showImage('pear')">Pear</a>  
+            <a href="#" onclick="showImage('peppers')">Peppers</a>  
+            <a href="#" onclick="showImage('pineapple')">Pineapple</a>  
+            <a href="#" onclick="showImage('potato')">Potato</a>  
+            <a href="#" onclick="showImage('radish')">Radish</a>  
+            <a href="#" onclick="showImage('rasp')">Raspberry</a>  
+            <a href="#" onclick="showImage('squash')">Squash</a>  
+            <a href="#" onclick="showImage('strawberry')">Strawberries</a>  
+            <a href="#" onclick="showImage('sweetpot')">Sweet potato</a>  
+            <a href="#" onclick="showImage('tomato')">Tomato</a>  
+            <a href="#" onclick="showImage('turnip')">Turnip</a>  
+            <a href="#" onclick="showImage('watermelon')">Watermelon</a>  
+          </div>
+        <script>
+function showImage(imageId) {
+            // Hide all images first
+            document.querySelectorAll('.image-container img').forEach(img => {
+                img.style.display = 'none';
+            });
+            // Show the selected image
+            document.getElementById(imageId).style.display = 'block';
+        }
+        </script>
+    </body>
+</html>
